@@ -15,6 +15,7 @@ class A:
         self.__num2 = 2
 
     def test1(self):
+        self.__test2()
         print("test 1 : %d %d" % (self.num1, self.__num2))
 
     def __test2(self):
@@ -33,3 +34,5 @@ b.__test2()
 
 b._A__test2()
 print(b._A__num2)
+# 但是可以通过父类的公有方法间接访问父类的私有属性和私有方法
+b.test1()
