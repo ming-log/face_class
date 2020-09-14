@@ -13,6 +13,7 @@ class A:
     def __init__(self):
         self.num1 = 1
         self.__num2 = 2
+        self._num3 = 3
 
     def test1(self):
         self.__test2()
@@ -24,11 +25,13 @@ class A:
 
 class B(A):
     def demo(self):
+        print(self._num3)
         print("class B")
 
 
 b = B()
 # 在外界不能直接访问私有属性和私有方法
+b._num3
 b.__num2
 b.__test2()
 
